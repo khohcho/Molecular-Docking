@@ -44,3 +44,7 @@ Standard scoring functions (binding affinity) often rank poses highly even if th
 * **Customization:** Requires configuring `SECONDARY_TARGET_COORD` and `SECONDARY_THRESH` inside the script to define the secondary spatial constraint.
 * **Output Limit:** Features a built-in toggle (`ONLY_UNIQUE_LIGANDS` and `TOP_N_LIMIT`). You can configure it to either extract *every* valid pose that hits both targets, or strictly limit the output to the top 50 unique ligand scaffolds. Automatically extracts and copies the successful `.pdbqt` files into a new directory.
 
+**`sort.py`**
+This script automatically scans the current directory for Vina-GPU output files (`.log`), extracts the best binding affinity scores (Mode 1), and sorts the results from the lowest (best) to highest energy. It prints a clean table to the terminal and simultaneously saves it as a `results.txt` file in the same directory.
+
+**Note:** If you are using standard AutoDock Vina instead of Vina-GPU, your output files might be saved with a `.txt` extension. In that case, simply open the Python script and change the `*.log` extension to `*.txt` in the search parameters.
