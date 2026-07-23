@@ -53,7 +53,7 @@ def analyze_strict_m1(pdbqt_file, threshold):
     dist_details = []
     labels = ["Anchor-1", "Anchor-2", "Anchor-3"]
     
-    for idx, p in enumerate(anchor_data[:3] if 'anchor_data' in locals() else anchor_coords[:3]):
+    for idx, p in enumerate(anchor_coords[:3]):
         label = labels[idx] if idx < len(labels) else f"Anchor-{idx+1}"
         dists = [calculate_distance(p["coords"], target) for target in PRIMARY_TARGET_COORDS]
         if dists[0] <= threshold or dists[1] <= threshold:
